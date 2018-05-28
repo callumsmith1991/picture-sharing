@@ -1,0 +1,31 @@
+
+@import "../scss/home";
+
+.container {
+  position: relative;
+}
+
+#connect {
+  float: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #333;
+  color: #FFF;
+  padding: 20px 20px 20px 20px;
+}
+
+.form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.menu-right {
+  text-align: right;
+}
+
+.row {
+  max-width: 100rem !important;
+}
