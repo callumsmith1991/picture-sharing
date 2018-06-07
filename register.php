@@ -13,11 +13,17 @@ require 'connect.php';
 
 // server side validation aganist empty input
 if (empty($_POST['username'])) {
-  echo 'Username is missing, Please input username';
+  echo '<script>';
+  echo 'alert("Username missing, please give username")';
+  echo '</script>';
 } elseif (empty($_POST['email'])) {
-  echo 'Email is missing, Please input email';
+  echo '<script>';
+  echo 'alert("Email missing, please give email")';
+  echo '</script>';
 } elseif (empty($_POST['password'])) {
-  echo 'Password is missing, Please input password';
+  echo '<script>';
+  echo 'alert("Password missing, please give a password")';
+  echo '</script>';
 } else {
 
   // define variables to input form data into database
@@ -29,11 +35,6 @@ if (empty($_POST['username'])) {
   $password_encrypted = password_hash($pass, PASSWORD_BCRYPT);
 
 
-  // search database if username already exists
-  // $searchforuserexistsquery = "SELECT username FROM users WHERE username = '" .$name. "'";
-  // $ifuserexists = mysqli_query($connect, $searchforuserexistsquery);
-  // $userfound = mysqli_fetch_assoc($ifuserexists);
-
     $searchforuserexistsquery = "SELECT count(1) FROM users WHERE username = ?";
     $selectstatement = $connect->prepare($searchforuserexistsquery);
     $selectstatement->bind_param("s", $name);
@@ -44,18 +45,18 @@ if (empty($_POST['username'])) {
 
 
   if($userfound) {
-   echo 'username already taken';
+    echo '<script>';
+    echo 'alert("Username already exists, Please try another one")';
+    echo '</script>';
   } else {
-   // SQL query to insert into database
-   // $query = "INSERT INTO users (`username`, `email`, `password`) VALUES ('$name', '$email', '$password_encrypted')";
-   // $result = mysqli_query($connect,$query);
-   // echo 'user successfully registered';
    $query = "INSERT INTO users (`username`, `email`, `password`) VALUES (?, ?, ?)";
    $insertstatement = $connect->prepare($query);
    $insertstatement->bind_param("sss", $name, $email, $password_encrypted);
    $insertstatement->execute();
    $insertstatement->close();
-   echo 'user successfully registered';
+   echo '<script>';
+   echo 'alert("user successfully registered")';
+   echo '</script>';
   }
 }
 
@@ -69,15 +70,15 @@ $connect->close();
 ?>
 
 
-<div class="form">
+<div class="center-block">
+  <h2>Registration form</h2>
         <form action="" method="post" id="registerform">
-
-
             <input type="text" name="username" placeholder="Username" class="form-control" /><br><br>
             <input type="email" name="email" placeholder="Email" class="form-control" /><br><br>
             <input type="password" name="password" placeholder="Password" class="form-control" /><br><br>
-            <input type="submit" name="insert" value="Register" class="button" />
-
+            <p class="text-center">
+              <input type="submit" name="insert" value="Register" class="btn btn-primary" />
+            </p>
         </form>
   </div>
 

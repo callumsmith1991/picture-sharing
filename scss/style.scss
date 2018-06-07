@@ -1,31 +1,48 @@
 
-@import "../scss/home";
 
-.container {
+body {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
   position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  h2 {
+    text-align: center;
+  }
 }
 
-#connect {
-  float: right;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: #333;
-  color: #FFF;
-  padding: 20px 20px 20px 20px;
+div.container-fluid, .page-content, .wrap {
+  height: inherit;
+  padding: 0px;
 }
 
-.form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-
-.menu-right {
-  text-align: right;
+.text-center {
+  text-align: center;
 }
 
 .row {
-  max-width: 100rem !important;
+  .col-3 {
+    img {
+      width: 100%;
+      filter: gray; /* IE6-9 */
+      -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+      filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+      transition: all 500ms ease-in-out;
+    }
+    img:hover {
+      -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+      filter: grayscale(0); /* Microsoft Edge and Firefox 35+ */
+    }
+    .photo-info {
+      display: none;
+    }
+  }
 }

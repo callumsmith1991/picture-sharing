@@ -32,7 +32,9 @@ if(password_verify($loginpass, $result)) {
     header("location: index.php");
 
 } else {
-    echo 'invalid credentials';
+  echo '<script>';
+  echo 'alert("invalid credentials")';
+  echo '</script>';
 }
 
 
@@ -44,17 +46,15 @@ $connect->close();
 
 ?>
 
-<div class="form">
+<div class="form center-block">
+<h2>Login</h2>
 <form action="login.php" method="post">
-
-
   <input type="text" name="username" required placeholder="Username" class="form-control"><br><br>
-
   <input type="password" name="password" required placeholder="Password" class="form-control"><br><br>
-
-  <input type="submit" class="button" name="submit" placeholder="Login here"></a>
-  <a class="button" href="register.php">Register here</a>
-
+  <p class="text-center">
+    <input type="submit" class="btn btn-primary" name="submit" placeholder="Login here" value="Login" />
+    <a class="btn btn-primary" href="register.php">Register here</a>
+  </p>
 </form>
 </div>
 

@@ -19,7 +19,7 @@ gulp.task('sass', function(){
 
 gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('scss/**/*.scss', ['sass']);
-  // gulp.watch('*.php', browserSync.reload);
+  gulp.watch('*.php', browserSync.reload);
   gulp.watch('js/**/*.js', browserSync.reload);
 })
 
