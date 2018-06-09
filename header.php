@@ -60,3 +60,7 @@
 
   <div class="page-content">
     <div class="wrap">
+
+      <!-- <div id="loading-gif">
+        <img src="ajax-loader.gif" id="loading" />
+      </div> -->

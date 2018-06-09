@@ -3,7 +3,7 @@
 body {
   height: 100%;
   width: 100%;
-  position: absolute;
+  // position: absolute;
 }
 
 .center-block {
@@ -22,6 +22,19 @@ body {
 div.container-fluid, .page-content, .wrap {
   height: inherit;
   padding: 0px;
+}
+
+
+
+.wrap {
+  max-width: 2000px;
+  .parent {
+  max-width: 1200px;
+  margin: 0 auto;
+  .row {
+    margin-bottom: 50px;
+   }
+  }
 }
 
 .text-center {
@@ -45,4 +58,9 @@ div.container-fluid, .page-content, .wrap {
       display: none;
     }
   }
+}
+
+
+footer {
+  padding: 1rem 1rem;
 }
