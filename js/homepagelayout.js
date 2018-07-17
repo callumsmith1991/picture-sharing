@@ -9,8 +9,15 @@ $(document).ready(function() {
  }
 
  $('.parent .col-3').each(function() {
+
    var image = $(this).find("img").attr("src");
-   $(this).find("a").attr("href", image);
+   var caption = $(this).find(".photo-info .photo-caption").html();
+   var username = $(this).find(".photo-info .username").html();
+
+   $(this).find("a.fancyBox").attr("href", image);
+   $(this).find("a.fancyBox").attr("data-caption", "<p>Uploaded by " +username+ "</p><p>" +caption+ "</p>");
+
+
  });
 
 });

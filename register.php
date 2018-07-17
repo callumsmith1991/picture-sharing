@@ -82,6 +82,14 @@ $connect->close();
         </form>
   </div>
 
+  <style>
+
+  body {
+    position: absolute;
+  }
+
+  </style>
+
 <script src="js/validateregistration.js"></script>
 
 <?php include 'footer.php'; ?>

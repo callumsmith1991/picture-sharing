@@ -38,12 +38,12 @@
         // Initialize the session
         session_start();
 
-        $userprofile = htmlspecialchars($_SESSION['username']);
-
         // If session variable is not set it will redirect to login page
         if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
           echo '<li><a class="nav-link" href="login.php">Login</a></li>';
+          $userprofile = "";
         } else {
+          $userprofile = htmlspecialchars($_SESSION['username']);
           echo  '<li><a class="nav-link" href="profile.php">' .$userprofile. '</a></li> ';
           echo '<li><a class="nav-link" href="logout.php">logout</a></li>';
         }
@@ -60,7 +60,3 @@
 
   <div class="page-content">
     <div class="wrap">
-
-      <!-- <div id="loading-gif">
-        <img src="ajax-loader.gif" id="loading" />
-      </div> -->

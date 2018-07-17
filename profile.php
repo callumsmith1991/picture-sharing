@@ -1,6 +1,9 @@
-<div class="row">
-
 <?php include 'header.php'; ?>
+
+<div class="parent">
+
+
+
 
 <?php
 
@@ -21,18 +24,32 @@ $userresult = mysqli_query($connect,$userquery);
 $count = mysqli_num_rows($userresult);
 
 
-if($count > 1) {
+if($count > 0) {
  echo '<p>Here is your pictures!</p>';
+} elseif ($count > 3) {
+  echo '<style>
+
+   .parent {
+     height: unset;
+   }
+
+  </style>';
 } else {
-  echo 'no pictures submitted yet';
+  echo '<div class="center-block text-center modal-content">';
+  echo '<p>No pictures submitted yet</p>';
+  echo '<p><a href="upload.php" class="btn btn-primary">Upload</a></p>';
+  echo '</div>';
 }
 
 while ($row = mysqli_fetch_array($userresult)) {
- echo '<p><img src="upload/' .$row['img_name']. '"/></p>';
+ echo '<div class="col-3">';
+ echo '<a data-fancybox="gallery" class="fancyBox"><img src="upload/' .$row['img_name']. '"/></a>';
  echo '<p>' .$row['caption']. '</p>';
- echo '<p><a class="alert button" href="delete.php?id=' .$row['pic_id']. '">Delete</a></p>';
- echo '<p><a class="btn btn-danger" href="edit.php?id=' .$row['pic_id']. '">Edit Caption</a></p>';
+ echo '<p><a class="btn btn-danger" href="delete.php?id=' .$row['pic_id']. '">Delete</a></p>';
+ echo '<p><a class="btn btn-primary" href="edit.php?id=' .$row['pic_id']. '">Edit Caption</a></p>';
+ echo '</div>';
 }
+
 
 // close connection
  mysqli_free_result($userresult);
@@ -42,8 +59,20 @@ while ($row = mysqli_fetch_array($userresult)) {
 
 ?>
 
-
 </div>
+
+<style>
+
+.fancybox-caption {
+  display: none;
+}
+
+.parent {
+  height: inherit;
+}
+
+
+</style>
 
 
 

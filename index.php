@@ -36,16 +36,13 @@ $imageresult = mysqli_query($connect,$displayallimagesquery);
 
 while($row = mysqli_fetch_array($imageresult)) {
   echo '<div class="col-3">';
-  echo '<a data-fancybox="gallery"><img src="upload/' .$row['img_name']. '" /></a>';
+  echo '<a data-fancybox="gallery" class="fancyBox"><img src="upload/' .$row['img_name']. '" /></a>';
   echo '<div class="photo-info">';
-  echo '<p>' .$row['username']. '</p>';
-  echo '<p>' .$row['caption']. '</p>';
+  echo '<p class="username">' .$row['username']. '</p>';
+  echo '<p class="photo-caption">' .$row['caption']. '</p>';
   echo '</div>';
   echo '</div>';
 }
-
-
-
 
 
  ?>

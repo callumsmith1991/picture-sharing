@@ -37,11 +37,11 @@ if($updateresult) {
 ?>
 
 
-<div class="form">
+<div class="center-block">
 
  <form action="" method="post">
-  <input type="text" name="editedcaption" value="<?php echo $caption; ?>" />
-  <input type="submit" value="Update caption" name="update">
+  <input type="text" name="editedcaption" value="<?php echo $caption; ?>" class="form-control" />
+  <input type="submit" value="Update caption" name="update" class="btn btn-primary">
  </form>
 
 </div>
@@ -49,7 +49,13 @@ if($updateresult) {
 
 
 
+<style>
 
+body {
+  position: absolute;
+}
+
+</style>
 
 
 

@@ -1,10 +1,12 @@
-<?php include 'header.php'; ?>
+
 
 
 <?php
 
 // start session
-session_start();
+// session_start();
+
+include 'header.php';
 
 //connect to database
 require 'connect.php';
@@ -30,7 +32,6 @@ if(password_verify($loginpass, $result)) {
     session_start();
     $_SESSION['username'] = $loginuser; // save session in variable
     header("location: index.php");
-
 } else {
   echo '<script>';
   echo 'alert("invalid credentials")';
@@ -58,6 +59,13 @@ $connect->close();
 </form>
 </div>
 
+<style>
+
+body {
+  position: absolute;
+}
+
+</style>
 
 
 

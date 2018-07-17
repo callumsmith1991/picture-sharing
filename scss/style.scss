@@ -3,7 +3,14 @@
 body {
   height: 100%;
   width: 100%;
-  // position: absolute;
+}
+
+.in {
+  display: block !important;
+}
+
+.modal-content {
+  padding: 20px;
 }
 
 .center-block {
@@ -28,6 +35,7 @@ div.container-fluid, .page-content, .wrap {
 
 .wrap {
   max-width: 2000px;
+  margin: 0 auto;
   .parent {
   max-width: 1200px;
   margin: 0 auto;
@@ -63,4 +71,47 @@ div.container-fluid, .page-content, .wrap {
 
 footer {
   padding: 1rem 1rem;
+  .row {
+    .col-4 {
+      p {
+            font-size: 30px;
+      }
+      #copyright {
+            font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  h1.display-4 {
+    font-size: 1.5rem;
+  }
+  .wrap {
+    padding-left: 4.33333%;
+    padding-right: 4.333333%;
+  }
+  .parent {
+    div.row {
+      margin-bottom: 0px !important;
+      .col-3 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        img {
+          height: 350px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  footer {
+    .row {
+      .col-4 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
+  }
 }

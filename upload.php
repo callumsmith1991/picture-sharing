@@ -73,6 +73,13 @@ if(isset($_POST['image_upload'])) {
 
 ?>
 
+<style>
+
+body {
+  position: absolute;
+}
+
+</style>
 
 
 

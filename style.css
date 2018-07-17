@@ -2,6 +2,12 @@ body {
   height: 100%;
   width: 100%; }
 
+.in {
+  display: block !important; }
+
+.modal-content {
+  padding: 20px; }
+
 .center-block {
   display: block;
   margin-left: auto;
@@ -18,7 +24,8 @@ div.container-fluid, .page-content, .wrap {
   padding: 0px; }
 
 .wrap {
-  max-width: 2000px; }
+  max-width: 2000px;
+  margin: 0 auto; }
   .wrap .parent {
     max-width: 1200px;
     margin: 0 auto; }
@@ -49,3 +56,27 @@ div.container-fluid, .page-content, .wrap {
 
 footer {
   padding: 1rem 1rem; }
+  footer .row .col-4 p {
+    font-size: 30px; }
+  footer .row .col-4 #copyright {
+    font-size: 1.2rem; }
+
+@media only screen and (max-width: 450px) {
+  h1.display-4 {
+    font-size: 1.5rem; }
+  .wrap {
+    padding-left: 4.33333%;
+    padding-right: 4.333333%; }
+  .parent div.row {
+    margin-bottom: 0px !important; }
+    .parent div.row .col-3 {
+      width: 100%;
+      max-width: 100%;
+      flex: 0 0 100%; }
+      .parent div.row .col-3 img {
+        height: 350px;
+        margin-bottom: 20px; }
+  footer .row .col-4 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%; } }

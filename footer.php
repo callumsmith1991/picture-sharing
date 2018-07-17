@@ -4,19 +4,15 @@
   <div class="row">
     <div class="col-4">
       <p>
-        test
+        CallumSmith
       </p>
     </div>
     <div class="col-4">
-      <p>
-        test
+      <p id="copyright">
+        © Callum Smith 2018
       </p>
     </div>
-    <div class="col-4">
-      <p>
-        test
-      </p>
-    </div>
+
   </div>
 </footer>
 </div>
